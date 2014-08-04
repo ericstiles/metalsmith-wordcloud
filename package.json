@@ -4,7 +4,7 @@
   "description": "Groups posts based on categories in articles by attaching an array of the tags with their associated weights to the metalsmith metadata object.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "lib/index.js"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "metalsmith": "~0.9.0",
     "handlebars": "~2.0.0-alpha.4",
     "moment": "~2.8.0",
-    "metalsmith-tags": "~0.6.1"
+    "metalsmith-tags": "~0.6.1",
+    "mocha": "~1.21.3"
   }
 }

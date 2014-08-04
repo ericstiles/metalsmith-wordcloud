@@ -1,8 +1,9 @@
+[![Build Status](https://travis-ci.org/ericstiles/metalsmith-wordcloud.svg?branch=master)](https://travis-ci.org/ericstiles/metalsmith-wordcloud)
 # MetalSmith-Cloud
 
-A (metalsmith)[https://github.com/segmentio/metalsmith] plugin that creates an array of weighted values for use in a word cloud.
+A [metalsmith](https://github.com/segmentio/metalsmith) plugin that creates an array of weighted values for use in a word cloud.
 
-This plugin needs to be used in conjunction with (metalsmith-tags)[https://github.com/totocaster/metalsmith-tags] as the path for the cloud category can used to point to the html page listing of related articles.  The metalsmith-tags plugin takes the string list of categories/tags and converts them to an array of values.  The metalsmith-cloud plugin is dependent on this array that exists in each file object.
+This plugin needs to be used in conjunction with [metalsmith-tags](https://github.com/totocaster/metalsmith-tags) as the path for the cloud category can used to point to the html page listing of related articles.  The metalsmith-tags plugin takes the string list of categories/tags and converts them to an array of values.  The metalsmith-cloud plugin is dependent on this array that exists in each file object.
 
 Cloud tags are sorted alphanumerically by tag name.
 
@@ -77,4 +78,4 @@ where the html built would be as follows:
     <a href="/topics/blog">blog(1)</a>
 ```
 
-There are several implementations for creating word clouds.  [http://ericstiles.github.io] uses (jquery.tagcloud.js)[https://github.com/addywaddy/jquery.tagcloud.js] to create a wordcloud on the site.
+There are several implementations for creating word clouds.  [http://ericstiles.github.io] uses [jquery.tagcloud.js](https://github.com/addywaddy/jquery.tagcloud.js) to create a wordcloud on the site.
