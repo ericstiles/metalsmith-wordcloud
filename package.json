@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/ericstiles/metalsmith-wordcloud"
+    "url": "https://github.com/ericstiles/metalsmith-wordcloud"
   },
   "bugs": {
-    "url": "http://github.com/ericstiles/metalsmith-wordcloud/issues"
+    "url": "https://github.com/ericstiles/metalsmith-wordcloud/issues"
   },
   "keywords": [
     "wordcloud",
