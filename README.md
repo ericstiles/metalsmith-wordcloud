@@ -62,7 +62,7 @@ A property key 'cloud' is added to the metadata containing a sorted array of obj
 
 ### Application
 
-In (handlebars)[] the following example creates links for each category.
+Using [handlebars](http://handlebarsjs.com/) the following example creates links for each category.
 
     {{#each cloud}}
         <a href="{{this.pth}}">
