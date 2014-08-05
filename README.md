@@ -78,4 +78,4 @@ where the html built would be as follows:
     <a href="/topics/blog">blog(1)</a>
 ```
 
-There are several implementations for creating word clouds.  [http://ericstiles.github.io] uses [jquery.tagcloud.js](https://github.com/addywaddy/jquery.tagcloud.js) to create a wordcloud on the site.
+There are several implementations for creating word clouds.  (http://ericstiles.github.io) uses [jquery.tagcloud.js](https://github.com/addywaddy/jquery.tagcloud.js) to create a wordcloud on the site.
