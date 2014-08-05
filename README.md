@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/ericstiles/metalsmith-wordcloud.svg?branch=master)](https://travis-ci.org/ericstiles/metalsmith-wordcloud)
-# MetalSmith-Cloud
+# MetalSmith-WordCloud
 
 A [metalsmith](https://github.com/segmentio/metalsmith) plugin that creates an array of weighted values for use in a word cloud.
 
