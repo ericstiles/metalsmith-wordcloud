@@ -26,29 +26,29 @@ var metalsmith = {
 var expected_cloud_default_values = [{
     ctg: 'cat1',
     wght: 1,
-    pth: 'cat1'
+    pth: '/cat1'
 }, {
     ctg: 'cat2',
     wght: 1,
-    pth: 'cat2'
+    pth: '/cat2'
 }, {
     ctg: 'cat3',
     wght: 2,
-    pth: 'cat3'
+    pth: '/cat3'
 }];
 //expected return array when values provided to plugin
 var expected_cloud_provided_values = [{
     ctg: 'cat1',
     wght: 1,
-    pth: 'topics/cat1'
+    pth: '/topics/cat1'
 }, {
     ctg: 'cat2',
     wght: 1,
-    pth: 'topics/cat2'
+    pth: '/topics/cat2'
 }, {
     ctg: 'cat3',
     wght: 2,
-    pth: 'topics/cat3'
+    pth: '/topics/cat3'
 }];
 // Mock file array
 var files = {
@@ -175,7 +175,7 @@ describe('metalsmith-cloud using user provided configurations', function() {
         var plugin = cloud({
             category: 'tags',
             reverse: false, //default is false
-            path: 'topics'
+            path: '/topics'
         });
         plugin(files, metalsmith, testDone);
         assert.notEqual(metalsmith.metadata().cloud, undefined, "cloud key doesn't exist in metadata");
