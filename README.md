@@ -44,7 +44,7 @@ metalsmith
     .use(wordcloud({
         category: 'tags', //optional, default is tags
         reverse: false, //optional sort value on category, default is false
-        path: 'topics'
+        path: '/topics' // <- Notice that path is prefixed with slash for absolute path 
     }))
 ```
 
