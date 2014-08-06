@@ -62,7 +62,7 @@ A property key 'cloud' is added to the metadata containing a sorted array of obj
 
 ### Application
 
-In (handlebars)[] the following example creates links for each category.
+Using [handlebars](http://handlebarsjs.com/) the following example creates links for each category.
 
     {{#each cloud}}
         <a href="{{this.pth}}">
@@ -78,4 +78,4 @@ where the html built would be as follows:
     <a href="/topics/blog">blog(1)</a>
 ```
 
-There are several implementations for creating word clouds.  [http://ericstiles.github.io] uses [jquery.tagcloud.js](https://github.com/addywaddy/jquery.tagcloud.js) to create a wordcloud on the site.
+There are several implementations for creating word clouds.  http://ericstiles.github.io uses [jquery.tagcloud.js](https://github.com/addywaddy/jquery.tagcloud.js) to create a wordcloud on the site.
