@@ -21,9 +21,10 @@
   ],
   "author": "Eric Stiles",
   "license": "ISC",
-  "Dependencies": {},
+  "dependencies": {
+    "underscore": "~1.6.0"
+  },
   "devDependencies": {
-    "underscore": "~1.6.0",
     "assert-dir-equal": "~1.0.1",
     "metalsmith": "~0.9.0",
     "handlebars": "~2.0.0-alpha.4",
