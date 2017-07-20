@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-wordcloud",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Groups posts based on categories in articles by attaching an array of the tags with their associated weights to the metalsmith metadata object.",
   "main": "lib/index.js",
   "scripts": {

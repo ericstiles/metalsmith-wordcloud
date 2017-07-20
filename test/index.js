@@ -55,7 +55,7 @@ var files = {
     "content/posts/a.html": {
         "title": "title-one",
         "date": "2013-04-01T00:00:00.000Z",
-        "tags": ["cat1"],
+        "tags": "cat1",
         "template": "blog.hbt",
         "contents": [60, 112, 62, 116, 105, 116, 108, 101, 45, 111, 110, 101, 60, 47, 112, 62, 10],
         "mode": "0644"
@@ -65,7 +65,7 @@ var files = {
     "content/posts/b.html": {
         "title": "title-two",
         "date": "2013-04-01T00:00:00.000Z",
-        "tags": ["cat2", "cat3", ""],
+        "tags": "cat2, cat3",
         "template": "blog.hbt",
         "contents": [60, 112, 62, 116, 105, 116, 108, 101, 45, 116, 119, 111, 60, 47, 112, 62, 10],
         "mode": "0644"
@@ -73,7 +73,7 @@ var files = {
     "content/posts/c.html": {
         "title": "title-three",
         "date": "2013-04-01T00:00:00.000Z",
-        "tags": ["cat3"],
+        "tags": "cat3",
         "template": "blog.hbt",
         "contents": [60, 112, 62, 116, 105, 116, 108, 101, 45, 116, 104, 114, 101, 101, 60, 47, 112, 62, 10],
         "mode": "0644"
@@ -101,7 +101,7 @@ var files = {
         "posts": [{
             "title": "title-one",
             "date": "2013-04-01T00:00:00.000Z",
-            "tags": ["cat1"],
+            "tags": "cat1",
             "template": "blog.hbt",
             "contents": [60, 112, 62, 116, 105, 116, 108, 101, 45, 111, 110, 101, 60, 47, 112, 62, 10],
             "mode": "0644"
@@ -115,7 +115,7 @@ var files = {
         "posts": [{
             "title": "title-two",
             "date": "2013-04-01T00:00:00.000Z",
-            "tags": ["cat2", "cat3", ""],
+            "tags": "cat2,cat3",
             "template": "blog.hbt",
             "contents": [60, 112, 62, 116, 105, 116, 108, 101, 45, 116, 119, 111, 60, 47, 112, 62, 10],
             "mode": "0644"
@@ -129,14 +129,14 @@ var files = {
         "posts": [{
             "title": "title-two",
             "date": "2013-04-01T00:00:00.000Z",
-            "tags": ["cat2", "cat3", ""],
+            "tags": "cat2, cat3",
             "template": "blog.hbt",
             "contents": [60, 112, 62, 116, 105, 116, 108, 101, 45, 116, 119, 111, 60, 47, 112, 62, 10],
             "mode": "0644"
         }, {
             "title": "title-three",
             "date": "2013-04-01T00:00:00.000Z",
-            "tags": ["cat3"],
+            "tags": "cat3",
             "template": "blog.hbt",
             "contents": [60, 112, 62, 116, 105, 116, 108, 101, 45, 116, 104, 114, 101, 101, 60, 47, 112, 62, 10],
             "mode": "0644"
@@ -150,7 +150,7 @@ var files = {
         "posts": [{
             "title": "title-two",
             "date": "2013-04-01T00:00:00.000Z",
-            "tags": ["cat2", "cat3", ""],
+            "tags": "cat2, cat3",
             "template": "blog.hbt",
             "contents": [60, 112, 62, 116, 105, 116, 108, 101, 45, 116, 119, 111, 60, 47, 112, 62, 10],
             "mode": "0644"
