@@ -24,38 +24,44 @@ var metalsmith = {
 //expected return array when no values provided to plugin 
 //and default values are used
 var expected_cloud_default_values = [{
-    ctg: 'cat1',
-    wght: 1,
-    pth: '/cat1'
+    name: 'cat1',
+    slug: 'cat1',
+    weight: 1,
+    path: 'tags/cat1/index.html'
 }, {
-    ctg: 'cat2',
-    wght: 1,
-    pth: '/cat2'
+    name: 'cat2',
+    slug: 'cat2',
+    weight: 1,
+    path: 'tags/cat2/index.html'
 }, {
-    ctg: 'cat3',
-    wght: 2,
-    pth: '/cat3'
+    name: 'cat3',
+    slug: 'cat3',
+    weight: 2,
+    path: 'tags/cat3/index.html'
 }];
 //expected return array when values provided to plugin
 var expected_cloud_provided_values = [{
-    ctg: 'cat1',
-    wght: 1,
-    pth: '/topics/cat1'
+    name: 'cat1',
+    slug: 'cat1',
+    weight: 1,
+    path: '/topics/cat1'
 }, {
-    ctg: 'cat2',
-    wght: 1,
-    pth: '/topics/cat2'
+    name: 'cat2',
+    slug: 'cat2',
+    weight: 1,
+    path: '/topics/cat2'
 }, {
-    ctg: 'cat3',
-    wght: 2,
-    pth: '/topics/cat3'
+    name: 'cat3',
+    slug: 'cat3',
+    weight: 2,
+    path: '/topics/cat3'
 }];
 // Mock file array
 var files = {
     "content/posts/a.html": {
         "title": "title-one",
         "date": "2013-04-01T00:00:00.000Z",
-        "tags": "cat1",
+        "tags": [{ name: "cat1", slug: "cat1" }],
         "template": "blog.hbt",
         "contents": [60, 112, 62, 116, 105, 116, 108, 101, 45, 111, 110, 101, 60, 47, 112, 62, 10],
         "mode": "0644"
@@ -65,7 +71,7 @@ var files = {
     "content/posts/b.html": {
         "title": "title-two",
         "date": "2013-04-01T00:00:00.000Z",
-        "tags": "cat2, cat3",
+        "tags": [{ name: "cat2", slug: "cat2" },{ name: "cat3", slug: "cat3" }],
         "template": "blog.hbt",
         "contents": [60, 112, 62, 116, 105, 116, 108, 101, 45, 116, 119, 111, 60, 47, 112, 62, 10],
         "mode": "0644"
@@ -73,7 +79,7 @@ var files = {
     "content/posts/c.html": {
         "title": "title-three",
         "date": "2013-04-01T00:00:00.000Z",
-        "tags": "cat3",
+        "tags": [{ name: "cat3", slug: "cat3" }],
         "template": "blog.hbt",
         "contents": [60, 112, 62, 116, 105, 116, 108, 101, 45, 116, 104, 114, 101, 101, 60, 47, 112, 62, 10],
         "mode": "0644"
@@ -81,7 +87,7 @@ var files = {
     "content/posts/e.html": {
         "title": "title-five",
         "date": "2013-04-01T00:00:00.000Z",
-        "tags": null,
+        "tags": [],
         "template": "blog.hbt",
         "contents": [60, 112, 62, 116, 105, 116, 108, 101, 45, 102, 105, 118, 101, 60, 47, 112, 62, 10],
         "mode": "0644"
@@ -175,7 +181,7 @@ describe('metalsmith-cloud using user provided configurations', function() {
         var plugin = cloud({
             category: 'tags',
             reverse: false, //default is false
-            path: '/topics'
+            path: '/topics/:tag'
         });
         plugin(files, metalsmith, testDone);
         assert.notEqual(metalsmith.metadata().cloud, undefined, "cloud key doesn't exist in metadata");

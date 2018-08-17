@@ -20,7 +20,7 @@ Cloud tags are sorted alphanumerically by tag name.
   "plugins": {
     "metalsmith-cloud": {
       "handle": "tags",
-      "path": "topics",
+      "path": "topics/:tags/index.html",
       "reverse": true
     }
   }
@@ -38,26 +38,27 @@ wordcloud = require('metalsmith-cloud');
 metalsmith
     .use(tags({
         handle: 'tags',
-        path: 'topics',
+        path: 'topics/:tags/index.html',
         template: '/partials/tag.hbt'
     }))
     .use(wordcloud({
         category: 'tags', //optional, default is tags
         reverse: false, //optional sort value on category, default is false
-        path: '/topics' // <- Notice that path is prefixed with slash for absolute path 
+        path: 'topics/:tags/index.html'  // according to the path of metalsmith-tags
     }))
 ```
 
 ## Usage
 
 ### Under The Covers
-A property key 'cloud' is added to the metadata containing a sorted array of objects with 'ctg', 'wght' and 'pth' keys.
+A property key 'cloud' is added to the metadata containing a sorted array of objects with 'name', 'slug', 'weight' and 'path' keys.
 
-```json
-    {cloud: 
-    [ { ctg: 'aws', wght: 1, pth: '/topics/aws' },
-     { ctg: 'bash', wght: 1, pth: '/topics/bash' },
-     { ctg: 'blog', wght: 2, pth: '/topics/blog' } ] }
+```js
+  { cloud: [
+    { name: 'aws',  slug: 'aws',  weight: 1, path: 'topics/aws/index.html' },
+    { name: 'bash', slug: 'bash', weight: 1, path: 'topics/bash/index.html' },
+    { name: 'blog', slug: 'blog', weight: 2, path: 'topics/blog/blog.html' }
+  ] }
 ```
 
 ### Application
@@ -65,17 +66,17 @@ A property key 'cloud' is added to the metadata containing a sorted array of obj
 Using [handlebars](http://handlebarsjs.com/) the following example creates links for each category.
 
     {{#each cloud}}
-        <a href="{{this.pth}}">
-            {{this.ctg}}({{this.wght}})
+        <a href="/{{this.path}}">
+            {{this.name}}({{this.weight}})
         </a>
     {{/each}}
 
 where the html built would be as follows:
 
 ```html
-    <a href="/topics/aws">aws(1)</a>
-    <a href="/topics/bash">bash(1)</a>
-    <a href="/topics/blog">blog(1)</a>
+    <a href="/topics/aws/index.html">aws(1)</a>
+    <a href="/topics/bash/index.html">bash(1)</a>
+    <a href="/topics/blog/index.html">blog(1)</a>
 ```
 
 There are several implementations for creating word clouds.  http://ericstiles.github.io uses [jquery.tagcloud.js](https://github.com/addywaddy/jquery.tagcloud.js) to create a wordcloud on the site.
