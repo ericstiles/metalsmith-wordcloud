@@ -22,14 +22,14 @@
   "author": "Eric Stiles",
   "license": "ISC",
   "dependencies": {
-    "underscore": "~1.6.0"
+    "underscore": "^1.13.2"
   },
   "devDependencies": {
     "assert-dir-equal": "~1.0.1",
+    "handlebars": "^4.7.7",
     "metalsmith": "~0.9.0",
-    "handlebars": "~2.0.0-alpha.4",
-    "moment": "~2.8.0",
     "metalsmith-tags": "~0.6.1",
-    "mocha": "~1.21.3"
+    "mocha": "^9.2.1",
+    "moment": "^2.29.1"
   }
 }
